@@ -17,14 +17,13 @@ class DeadlinedReminder(Iterable, ABC):
     def is_due():
         pass
 
-
 class DateReminder(DeadlinedReminder):
     def __init__(self, text, date):
         self.text = text
         self.date = parse(date, dayfirst=True)
 
     def __iter__(self):
-        return.iter([self.text, date.isoformat()])
+        return iter([self.text, self.date.isoformat()])
 
     def is_due(self):
         self.date <= datetime.now()
